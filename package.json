@@ -1,0 +1,27 @@
+{
+  "name": "node_rest_api_demo",
+  "version": "1.0.0",
+  "description": "rest api for user CRUD operations",
+  "main": "app.js",
+  "scripts": {
+    "start" : "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasanna1406/node_rest_api_demo.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "node",
+    "nodemon",
+    "mongodb"
+  ],
+  "author": "prasanna wagh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prasanna1406/node_rest_api_demo/issues"
+  },
+  "homepage": "https://github.com/prasanna1406/node_rest_api_demo#readme"
+}
