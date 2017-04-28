@@ -4,8 +4,8 @@ var mongoose = require('mongoose');
 var Employee = mongoose.model('Employee');
 
 var BasicStrategy = require('passport-http').BasicStrategy;
-var TokenStrategy = require('passport-http-oauth').TokenStrategy;
-var BearerStrategy = require('passport-http-bearer').Strategy;
+//var TokenStrategy = require('passport-http-oauth').TokenStrategy;
+//var BearerStrategy = require('passport-http-bearer').Strategy;
 module.exports = function(passport) {
 
     passport.use('basic', new BasicStrategy(
