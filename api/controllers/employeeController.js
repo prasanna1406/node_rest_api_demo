@@ -35,3 +35,31 @@ exports.deleteAllEmployee = function(req, res) {
         res.json(removedCount);
     });
 }
+
+exports.fetchEmployee = function(req, res) {
+    let empId = req.params.empId;
+    console.log(empId);
+    Employee.findOne({ '_id': empId }, function(err, employee) {
+        if (err)
+            res.send(err);
+        res.json(employee);
+    });
+}
+
+exports.updateEmployee = function(req, res) {
+    let empId = req.params.empId;
+    Employee.findOneAndUpdate({ '_id': empId }, req.body, function(err, employee) {
+        if (err)
+            res.send(err);
+        res.json(employee);
+    });
+}
+
+exports.deleteEmployee = function(req, res) {
+    let empId = req.params.empId;
+    Employee.findOneAndRemove({ '_id': empId }, function(err, responseDoc) {
+        if (err)
+            res.send(err);
+        res.json(responseDoc);
+    })
+}

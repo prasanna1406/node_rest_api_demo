@@ -1,0 +1,57 @@
+1. What is RestFull APi?
+
+    REST stands for Representational State Transfer.
+    It is an architecture that allows client-server communication through a uniform interface.
+    REST is stateless, cachable and has property called idempotence.
+    It means that the side effect of identical requests have the same side-effect as a single request.
+
+2. app.route()
+    You can create chainable route handlers for a route path by using app.route(). Because the path is specified at a single location, creating modular routes is helpful, as is reducing redundancy and typos. For more information about routes, see: Router() documentation.
+
+    Here is an example of chained route handlers that are defined by using app.route().
+
+    app.route('/book')
+    .get(function (req, res) {
+        res.send('Get a random book')
+    })
+    .post(function (req, res) {
+        res.send('Add a book')
+    })
+    .put(function (req, res) {
+        res.send('Update the book')
+    })
+
+3. what is idempotent methods?
+    Idompotent methods are HTTP methods which can be called multiple times and they will produce the same result.
+    They are considered the safe option to update a resource on the Server.
+
+    These are methods which are safe from multiple calls i.e. they produce same result irrespective of how many times you call them.
+    They change the resource in Server every time you call them but the end result is always same.
+    Maths is good place to explain idempotent methods, consider the following example:
+
+    int i = 30; // idempotent
+
+    i++; // not idempotent
+
+4. What is Safe Methods in HTTP
+
+    These are HTTP methods which don't change the resource on the server side.
+    For example using a GET or a HEAD request on a resource URL should NEVER change the resource.
+    Safe methods can be cached and prefetched without any repercussions or side-effect to the resource.
+    
+    Ex. 
+    GET /order/123 HTTP/1.1
+
+    This will retrieve the order with orderId 123.
+    No matter how many times you execute this method, the order in the server will not be modified or impacted.
+    That's why GET method is a safe method.
+
+5.  Here is nice overview of which HTTP methods are safe and Idempotent:
+    
+    GET is both Safe and Idempotent.
+    HEAD is also both safe and idempotent.
+    OPTIONS is also safe and idempotent.
+    PUT is not safe but idempotent.
+    DELETE is not safe but idempotent.
+    POST is neither safe nor idempotent.
+    PATCH is also neither safe nor idempotent.
